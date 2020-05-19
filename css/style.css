@@ -49,6 +49,7 @@ nav.main div.trigger i {
     font-size: 2.5rem;
     transform: translate(-50%);
     z-index: 999;
+
     /* background-color: rgba(255, 255, 255, 0.322); */
 
 }
@@ -118,6 +119,10 @@ nav.main div.trigger i {
 
 .main ul li:nth-child(4) {
     transform: translateX(40vw);
+}
+
+.menuActive {
+    animation: menuActive 1s forwards;
 }
 
 /* CONTAINS CONTENT - BELOW */
@@ -193,4 +198,13 @@ footer .media {
 
 footer .media a {
     color: white;
+}
+
+/* SOME ANIMATIONS */
+
+@keyframes menuActive {
+
+    100% {
+        transform: translate(0);
+    }
 }
