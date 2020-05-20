@@ -1,14 +1,28 @@
 // mobile menu dropdown
 
-const menuTrigger = document.querySelector(".trigger i");
+var menuTrigger = document.querySelector(".trigger i");
+var menuTriggerX = document.querySelector(".triggerX i");
 var menuElements = document.querySelectorAll(".main ul li");
 
-function menuActive() {
+function menuShow() {
     for (var i = 0; i < menuElements.length; i++) {
-        menuElements[i].classList.toggle('menuActive');
+        menuElements[i].classList.toggle('menuShow');
+
+
 
     }
-
+    menuTrigger.classList.add('triggerHide');
+    menuTriggerX.classList.add('triggerShow');
 }
 
-menuTrigger.addEventListener('click', menuActive);
+function menuHide() {
+    for (var i = 0; i < menuElements.length; i++) {
+        menuElements[i].classList.toggle('menuShow');
+    }
+    menuTrigger.classList.remove('triggerHide');
+    menuTriggerX.classList.remove('triggerShow');
+    menuTrigger.classList.add('triggerShow');
+    menuTriggerX.classList.add('triggerHide');
+}
+menuTrigger.addEventListener('click', menuShow);
+menuTriggerX.addEventListener('click', menuHide);

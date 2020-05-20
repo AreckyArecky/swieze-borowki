@@ -54,6 +54,25 @@ nav.main div.trigger i {
 
 }
 
+div.triggerX i {
+    top: 18vh;
+    left: 50%;
+    position: fixed;
+    font-size: 2.5rem;
+    transform: translate(-50%);
+    z-index: 998;
+    opacity: 0;
+}
+
+.triggerHide {
+    animation: triggerSwap .3s linear both;
+}
+
+div.triggerX .triggerShow {
+    animation: triggerSwap .5s .3s linear both reverse;
+    z-index: 999;
+}
+
 .dots i {
     position: absolute;
     font-size: 2rem;
@@ -121,7 +140,7 @@ nav.main div.trigger i {
     transform: translateX(40vw);
 }
 
-.menuActive {
+.menuShow {
     animation: menuActive 1s forwards;
 }
 
@@ -205,6 +224,16 @@ footer .media a {
 @keyframes menuActive {
 
     100% {
-        transform: translate(0);
+        transform: translateX(0);
+    }
+}
+
+@keyframes triggerSwap {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
     }
 }
