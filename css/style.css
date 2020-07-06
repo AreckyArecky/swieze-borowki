@@ -42,36 +42,32 @@ nav.main {
     height: 75vh;
 }
 
-nav.main div.trigger i {
-    top: 18vh;
+nav.main div.triggerWrap {
+    top: 4vh;
     left: 50%;
-    position: fixed;
+    height: 2.5rem;
+    width: 2.5rem;
+    position: relative;
     font-size: 2.5rem;
     transform: translate(-50%);
     z-index: 999;
-
-    /* background-color: rgba(255, 255, 255, 0.322); */
-
+    overflow: hidden;
 }
 
-div.triggerX i {
-    top: 18vh;
-    left: 50%;
-    position: fixed;
-    font-size: 2.5rem;
-    transform: translate(-50%);
-    z-index: 998;
-    opacity: 0;
+div.triggerWrap div {
+    height: 2.5rem;
+    text-align: center;
+    line-height: 2.5rem;
 }
 
-.triggerHide {
-    animation: triggerSwap .3s linear both;
+.triggerSwap {
+    animation: triggerSwap .3s linear forwards;
 }
 
-div.triggerX .triggerShow {
-    animation: triggerSwap .5s .3s linear both reverse;
+/* nav.main div .triggerShow {
+    animation: triggerSwap .5s .3s linear forwards reverse;
     z-index: 999;
-}
+} */
 
 .dots i {
     position: absolute;
@@ -229,11 +225,8 @@ footer .media a {
 }
 
 @keyframes triggerSwap {
-    0% {
-        opacity: 1;
-    }
 
     100% {
-        opacity: 0;
+        transform: translate(0, -100%);
     }
 }
